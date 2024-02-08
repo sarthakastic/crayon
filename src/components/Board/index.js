@@ -12,6 +12,20 @@ const Board = () => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
 
+    const changeConfig = () => {
+      context.strokeStyle = color;
+      context.lineWidth = size;
+    };
+
+    changeConfig();
+  }, []);
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    const context = canvas.getContext("2d");
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }, []);
