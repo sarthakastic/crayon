@@ -1,7 +1,7 @@
 import { MENU_ITEMS } from "@/constants";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { menuItemClick, actionItemClick } from "@/slice/menuSlice";
+import { actionItemClick } from "@/slice/menuSlice";
 
 const Board = () => {
   const dispatch = useDispatch();
@@ -101,8 +101,6 @@ const Board = () => {
       canvas.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
-
-  console.log(color, size);
 
   return <canvas ref={canvasRef}></canvas>;
 };
