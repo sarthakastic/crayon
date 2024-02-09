@@ -11,6 +11,7 @@ import {
 import styles from "./index.module.css";
 import { menuItemClick, actionItemClick } from "@/slice/menuSlice";
 import { MENU_ITEMS } from "@/constants";
+import { socket } from "@/socket";
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Menu = () => {
 
   const handleMenuClick = (itemName) => {
     dispatch(menuItemClick(itemName));
+    socket.emit("changeTool", itemName);
   };
 
   const handleActionItemClick = (itemName) => {
