@@ -5,9 +5,9 @@ import Toolbox from "@/components/Toolbox";
 export default function Home() {
   return (
     <>
+      <Board />
       <Menu />
       <Toolbox />
-      <Board />
     </>
   );
 }
