@@ -3,6 +3,7 @@ import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actionItemClick, menuItemClick } from "@/slice/menuSlice";
 import { socket } from "@/socket";
+import styles from "./index.module.css";
 
 const Board = () => {
   const dispatch = useDispatch();
@@ -140,7 +141,7 @@ const Board = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef}></canvas>;
+  return <canvas className={styles.canvas} ref={canvasRef}></canvas>;
 };
 
 export default Board;
